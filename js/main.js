@@ -72,7 +72,6 @@ expensesBtn.addEventListener('click', function() {
         i--;
     }
     expensesValue.textContent = sum;
-    appData.expensesSum = sum;
 
 }
 });
