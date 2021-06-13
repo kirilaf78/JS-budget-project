@@ -77,12 +77,11 @@ expensesBtn.addEventListener('click', function() {
 });
 
 optionalExpensesBtn.addEventListener('click', function() {
-  for (let i = 0; i <= optionalExpensesItem.length; i++) {
-    let questionOptExpenses = optionalExpensesItem[i].value ;
-    appData.optionalExpenses[i] = questionOptExpenses;
-    console.log(appData.optionalExpenses);
-    optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
-}
+  for (let i = 0; i < optionalExpensesItem.length; i++) {
+		let opt = optionalExpensesItem[i].value;
+        appData.optionalExpenses[i] = opt;
+        optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
+	}
   });
 
 countBtn.addEventListener('click', function() {
@@ -152,51 +151,10 @@ let appData = {
     optionalExpenses: {},
     income: [],
     savings: false,
-    chooseExpenses: function () {
-        
-    },
-    detectDayBudget: function () {
-        
-    },
-    detectLevel: function () {
-       
-    },
-    checkSavings: function () {
-        if (appData.savings == true) {
-            let save = +prompt("Какова сумма накоплений?"),
-                percent = +prompt("Под какой процент?");
-    
-                
-                alert("Доход с Вашего депозита в месяц: " + appData.monthIncome);
-        }
-    },
-    chooseOptExpenses: function () {
-       
-    },
-    chooseIncome: function () {
-
-        let items = prompt("Что принесет дополнительный доход? (Перечислите через запятую)", "");
-
-        if (typeof(items) != "string" || items == "" || typeof(items) == null) {
-            console.log("Вы ввели некорректные данные или не ввели их вовсе");
-        } else {
-            appData.income = items.split(", ");
-            appData.income.push(prompt("Может что-то еще?"));
-            appData.income.sort();
-        }
-
-        appData.income.forEach (function (itemmassive, i) {
-            alert("Способы доп. заработка: " + (i+1) + " - " + itemmassive);
-        });
-
-    }
-
-
-};
-
-for (let key in appData) {
-    console.log("Наша программа включает в себя данные: " + key + " - " + appData[key]);
 }
+    
+
+       
 
 
 
